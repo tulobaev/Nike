@@ -7,9 +7,9 @@ import { setSearch } from "../../../store/slices/DataSlices";
 import { FC } from "react";
 
 const Header: FC = () => {
-  const { searchValue } = useAppSelector((store) => store.dataProduct);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const { searchValue } = useAppSelector((store) => store.dataProduct);
 
   return (
     <section className={scss.Header}>
@@ -44,6 +44,7 @@ const Header: FC = () => {
                   onChange={({ target }) => dispatch(setSearch(target.value))}
                   placeholder="Search"
                   type="search"
+                  value={searchValue}
                   className={scss.input}
                 />
               </div>
