@@ -1,0 +1,452 @@
+.HomePage {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+
+  .content-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 103, 0, 0.1),
+      rgba(0, 0, 0, 0.05)
+    );
+    z-index: 1;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 60px 20px;
+
+    .title {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      max-width: 650px;
+      width: 100%;
+
+      h1 {
+        font-size: clamp(40px, 5vw + 1rem, 80px);
+        font-weight: 900;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        line-height: 0.9;
+        color: #111;
+
+        h2 {
+          font-size: clamp(30px, 4vw + 1rem, 70px);
+          font-weight: 700;
+          color: #ff6700;
+          margin-left: 20px;
+        }
+      }
+
+      p {
+        font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+        line-height: 28px;
+        color: #444;
+        max-width: 500px;
+      }
+
+      .ctaButtons {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+
+        .ctaButton {
+          padding: 12px 35px;
+          background-color: #111;
+          color: #fff;
+          border: none;
+          border-radius: 30px;
+          font-size: 16px;
+          font-weight: 600;
+          text-transform: uppercase;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+          &:hover {
+            background-color: #ff6700;
+            transform: scale(1.05);
+          }
+
+          &.outline {
+            background-color: transparent;
+            border: 2px solid #111;
+            color: #111;
+
+            &:hover {
+              border-color: #ff6700;
+              color: #ff6700;
+            }
+          }
+        }
+      }
+    }
+
+    .image {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 100%;
+        max-width: 600px;
+        object-fit: contain;
+        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        transition: transform 0.5s ease;
+
+        &:hover {
+          transform: rotate(10deg) scale(1.05);
+        }
+      }
+
+      .badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #ff6700;
+        color: #fff;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .cardContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 2;
+
+    .badge {
+      background-color: #ff6700;
+      color: #fff;
+      padding: 8px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      margin: 0 auto 20px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 55px 0;
+      flex-wrap: wrap;
+      max-width: 1280px;
+      margin: 0 auto;
+
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        background-color: #fff;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        img {
+          max-width: 250px;
+          width: 100%;
+          height: 300px;
+          border-radius: 10px;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+
+          &:hover {
+            transform: rotate(10deg) scale(1.05) translateY(-25px);
+          }
+        }
+
+        h3 {
+          font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+          font-weight: 700;
+          color: #111;
+          text-transform: uppercase;
+        }
+
+        .priceInfo {
+          display: flex;
+          justify-content: center;
+
+          p {
+            font-size: 18px;
+            color: #ff6700;
+            font-weight: 600;
+          }
+        }
+
+        .rating {
+          font-size: 14px;
+          color: #ff6700;
+
+          span {
+            margin-left: 5px;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tablet styles */
+@media (max-width: 992px) {
+  .HomePage {
+    .content {
+      padding: 50px 20px;
+      gap: 30px;
+
+      .title {
+        max-width: 500px;
+
+        h1 {
+          font-size: clamp(35px, 4vw + 1rem, 60px);
+
+          h2 {
+            font-size: clamp(28px, 3vw + 1rem, 50px);
+            margin-left: 15px;
+          }
+        }
+      }
+
+      .image img {
+        max-width: 450px;
+      }
+    }
+
+    .cardContainer {
+      padding: 35px 20px;
+
+      .box {
+        padding: 40px 0;
+        gap: 30px;
+
+        .card {
+          width: calc(50% - 30px);
+          max-width: none;
+          min-width: 250px;
+
+          img {
+            height: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .HomePage {
+    .content {
+      flex-direction: column;
+      text-align: center;
+      padding: 40px 20px;
+      gap: 40px;
+
+      .title {
+        align-items: center;
+
+        h1 {
+          font-size: clamp(32px, 6vw, 50px);
+          line-height: 1;
+
+          h2 {
+            font-size: clamp(26px, 5vw, 40px);
+            margin-left: 0;
+            margin-top: 5px;
+          }
+        }
+
+        p {
+          font-size: 16px;
+          line-height: 1.5;
+          max-width: 100%;
+        }
+
+        .ctaButtons {
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 15px;
+
+          .ctaButton {
+            padding: 10px 25px;
+            font-size: 14px;
+          }
+        }
+      }
+
+      .image {
+        margin-top: 10px;
+        width: 100%;
+
+        img {
+          max-width: 100%;
+        }
+
+        .badge {
+          top: 10px;
+          right: 10px;
+          padding: 6px 12px;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .cardContainer {
+      padding: 30px 15px;
+
+      .badge {
+        width: 130px;
+        font-size: 12px;
+      }
+
+      .box {
+        padding: 30px 0;
+        gap: 25px;
+        justify-content: center;
+
+        .card {
+          width: 100%;
+          max-width: 320px;
+          min-width: auto;
+
+          img {
+            height: 220px;
+          }
+
+          h3 {
+            font-size: 16px;
+          }
+
+          .priceInfo p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Small Mobile styles */
+@media (max-width: 480px) {
+  .HomePage {
+    .content {
+      padding: 30px 15px;
+
+      .title {
+        h1 {
+          font-size: 30px;
+
+          h2 {
+            font-size: 24px;
+          }
+        }
+
+        .ctaButtons .ctaButton {
+          padding: 8px 20px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    .cardContainer {
+      padding: 25px 10px;
+
+      .box {
+        padding: 25px 0;
+
+        .card {
+          padding: 20px 15px;
+
+          img {
+            height: 180px;
+          }
+        }
+      }
+    }
+
+    .content-background {
+      height: 100vh;
+    }
+  }
+}
+
+/* Landscape orientation for mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .HomePage .content {
+    padding: 30px 20px;
+    flex-direction: row;
+    text-align: left;
+
+    .title {
+      align-items: flex-start;
+
+      .ctaButtons {
+        justify-content: flex-start;
+      }
+    }
+
+    .image {
+      margin-top: 0;
+      max-width: 50%;
+    }
+  }
+}
+
+/* Animation for cards on scroll */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Fix for Safari */
+@supports (-webkit-touch-callout: none) {
+  .HomePage .content .image img {
+    transform-style: preserve-3d;
+  }
+}

@@ -1,0 +1,278 @@
+.ProductsPage {
+  padding-block: 60px;
+  width: 100%;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1280px;
+    padding: 0 20px;
+
+    .containerCategory {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+
+      .category {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h1 {
+          font-size: clamp(1.375rem, 1.148rem + 1.14vw, 2rem);
+          font-weight: 700;
+          color: #111;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .btnBox {
+          display: flex;
+          align-items: center;
+          gap: 15px;
+          flex-wrap: wrap;
+
+          button {
+            padding: 8px 18px;
+            background-color: #fff;
+            border: 2px solid #111;
+            border-radius: 35px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            text-transform: uppercase;
+            color: #111;
+            transition: all 0.3s ease;
+
+            &:hover {
+              background-color: #111;
+              color: #fff;
+            }
+
+            &:focus {
+              background-color: #ff6700;
+              color: #fff;
+              border-color: #ff6700;
+              box-shadow: 0 0 10px rgba(255, 103, 0, 0.5);
+            }
+          }
+        }
+      }
+
+      .products-wrapper {
+        width: 100%;
+        position: relative;
+        padding: 20px 0;
+      }
+
+      .products {
+        display: flex;
+        gap: 30px;
+        width: 100%;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+
+        .productCard {
+          flex: 0 0 min(300px, 80vw);
+          max-width: 400px;
+          width: 100%;
+          background-color: #fff;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+          }
+
+          img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+
+            &:hover {
+              transform: scale(1.08) translateY(-15px);
+            }
+          }
+
+          h2 {
+            font-size: clamp(1rem, 0.955rem + 0.23vw, 1.125rem);
+            font-weight: 700;
+            color: #111;
+            margin: 15px 20px 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          p {
+            font-size: clamp(0.875rem, 0.83rem + 0.23vw, 1rem);
+            color: #666;
+            margin: 0 20px 10px;
+            line-height: 1.4;
+
+            &:first-of-type {
+              font-weight: 700;
+              color: #ff6700;
+              font-size: clamp(0.938rem, 0.892rem + 0.23vw, 1.063rem);
+            }
+          }
+
+          span {
+            display: block;
+            font-size: 14px;
+            color: #999;
+            margin: 0 20px 15px;
+            text-transform: uppercase;
+          }
+        }
+
+        &::-webkit-scrollbar {
+          height: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background-color: rgba(0, 0, 0, 0.5);
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-track {
+          background: #e5e5e5;
+        }
+      }
+    }
+
+    .brandsFooter {
+      margin-top: 80px;
+      text-align: center;
+      width: 100%;
+
+      h1 {
+        font-size: clamp(1.375rem, 1.148rem + 1.14vw, 2rem);
+        font-weight: 700;
+        color: #111;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-block: 40px;
+      }
+
+      .brandsList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .brandCard {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          margin-bottom: 20px;
+
+          img {
+            max-width: 130px;
+            object-fit: contain;
+            width: 100%;
+            height: 120px;
+          }
+
+          span {
+            font-size: 16px;
+            font-weight: 500;
+            color: #333;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: #ff6700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .ProductsPage {
+    padding-block: 40px;
+
+    .content {
+      .containerCategory {
+        gap: 30px;
+
+        .category {
+          gap: 15px;
+
+          .btnBox {
+            gap: 10px;
+
+            button {
+              padding: 6px 14px;
+              font-size: 14px;
+            }
+          }
+        }
+
+        .products {
+          gap: 20px;
+
+          .productCard {
+            flex: 0 0 250px;
+
+            img {
+              height: 200px;
+            }
+          }
+        }
+      }
+
+      .brandsFooter {
+        margin-top: 50px;
+
+        .brandsList {
+          gap: 30px;
+
+          .brandCard img {
+            max-width: 100px;
+            height: 100px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .ProductsPage .content {
+    padding: 0 15px;
+
+    .containerCategory .products .productCard {
+      flex: 0 0 220px;
+    }
+
+    .brandsFooter .brandsList {
+      gap: 20px;
+    }
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  .products-wrapper {
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+  }
+}
