@@ -8,6 +8,8 @@ import { oneProduct, setData } from "../../store/slices/DataSlices";
 import axios from "axios";
 import Zoom from "react-medium-image-zoom";
 import "react-medium-image-zoom/dist/styles.css";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const API = import.meta.env.VITE_API;
 
@@ -57,7 +59,7 @@ const HomePage: FC = () => {
       <div className={scss.contentBackground}></div>
       <div className="container">
         <div className={scss.content}>
-          <div className={scss.title}>
+          <div data-aos="zoom-out-down" className={scss.title}>
             <h1>
               {arr.length > 0 && (
                 <h1>
@@ -87,21 +89,12 @@ const HomePage: FC = () => {
             </div>
           </div>
           <div className={scss.image}>
-            {newCardMain.length > 0 ? (
-              newCardMain.map((item, index) => (
-                <div key={index}>
-                  <img
-                    data-aos="zoom-out-down"
-                    src={item.photoURL}
-                    alt={item.name}
-                  />
-
-                  <span className={scss.badge}>New Release</span>
-                </div>
-              ))
-            ) : (
-              <h1>loading</h1>
-            )}
+            {newCardMain.map((item, index) => (
+              <div data-aos="zoom-out-down" key={index}>
+                <img src={item.photoURL} alt={item.name} />
+                <span className={scss.badge}>New Release</span>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -128,7 +121,39 @@ const HomePage: FC = () => {
                 </div>
               ))
             ) : (
-              <h1>loading</h1>
+              <SkeletonTheme baseColor="#e0e0e0" highlightColor="#f5f5f5">
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: "40px",
+                  }}
+                >
+                  {Array(3)
+                    .fill(0)
+                    .map((_, index) => (
+                      <div key={index} className={scss.card}>
+                        <Skeleton height={200} />
+                        <Skeleton
+                          height={24}
+                          width="60%"
+                          style={{ marginTop: 10 }}
+                        />
+                        <Skeleton
+                          height={20}
+                          width="30%"
+                          style={{ marginTop: 10 }}
+                        />
+                        <Skeleton
+                          height={20}
+                          width="40%"
+                          style={{ marginTop: 10 }}
+                        />
+                      </div>
+                    ))}
+                </div>
+              </SkeletonTheme>
             )}
           </div>
         </div>

@@ -124,6 +124,7 @@
         font-size: 14px;
         font-weight: 600;
         text-transform: uppercase;
+        display: flex;
       }
     }
   }
@@ -148,7 +149,7 @@
       align-items: center;
       justify-content: center;
       text-transform: uppercase;
-      margin: 0 auto 20px;
+      margin: 0px 70px;
     }
 
     .box {
@@ -223,7 +224,6 @@
   }
 }
 
-/* Tablet styles */
 @media (max-width: 992px) {
   .HomePage {
     .content {
@@ -269,7 +269,6 @@
   }
 }
 
-/* Mobile styles */
 @media (max-width: 768px) {
   .HomePage {
     .content {
@@ -362,7 +361,6 @@
   }
 }
 
-/* Small Mobile styles */
 @media (max-width: 480px) {
   .HomePage {
     .content {
@@ -406,7 +404,6 @@
   }
 }
 
-/* Landscape orientation for mobile */
 @media (max-width: 896px) and (orientation: landscape) {
   .HomePage .content {
     padding: 30px 20px;
@@ -428,7 +425,6 @@
   }
 }
 
-/* Animation for cards on scroll */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -444,7 +440,6 @@
   animation: fadeInUp 0.6s ease forwards;
 }
 
-/* Fix for Safari */
 @supports (-webkit-touch-callout: none) {
   .HomePage .content .image img {
     transform-style: preserve-3d;

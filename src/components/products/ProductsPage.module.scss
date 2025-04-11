@@ -63,20 +63,11 @@
         }
       }
 
-      .products-wrapper {
-        width: 100%;
-        position: relative;
-        padding: 20px 0;
-      }
-
       .products {
         display: flex;
         gap: 30px;
         width: 100%;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: thin;
+        overflow-x: scroll;
 
         .productCard {
           flex: 0 0 min(300px, 80vw);
